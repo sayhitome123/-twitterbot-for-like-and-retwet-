@@ -1,1 +1,0 @@
-worker: python List_like_retweet_malak.py
