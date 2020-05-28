@@ -1,5 +1,5 @@
 import sys
-import tweep
+import tweepy
 import datetime,time
 import os
 from os import environ
@@ -20,7 +20,7 @@ def get_tweets(api,username):
     page=1
     deadend=False
     while True:
-        tweets=reversed(api.list_timeline(list_id='1265742486405812225',include_rts=False)) #Doing Libya politics list
+        tweets=api.list_timeline(list_id='1265742486405812225',include_rts=False) #Doing Libya politics list
         #if you want to do it for your home timeline: api.home_timeline()
         #if you want it for user do it for user api.user_timeline(username,page=page)
         Now=datetime.datetime.now()
