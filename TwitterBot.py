@@ -1,5 +1,5 @@
 import sys
-import tweepy
+import tweep
 import datetime,time
 import os
 from os import environ
