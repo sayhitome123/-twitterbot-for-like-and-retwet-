@@ -33,15 +33,15 @@ def get_tweets(api,username):
                 print(tweet.created_at)
                 try:
                     tweet.favorite()
-                    #tweet.retweet()
                     print('Tweet Liked - ' + tweet.text)
                     time.sleep(2)
                     if tweet.retweet_count > 5:
                         tweet.retweet()
-                        print('retweeted')
+                        print('Retweeted')
                         time.sleep(120)
                 except tweepy.TweepError as e:
                     print(e.reason)
+                    time.sleep(90)
                 except StopIteration:
                     break
             else:
