@@ -39,7 +39,7 @@ def get_tweets(api,username):
                     if tweet.retweet_count > 5:
                         tweet.retweet()
                         print('retweeted')
-                        time.sleep(60)
+                        time.sleep(100)
                 except tweepy.TweepError as e:
                     print(e.reason)
                 except StopIteration:
