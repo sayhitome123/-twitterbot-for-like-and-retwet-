@@ -1,21 +1,18 @@
 import tweepy
 import random
 import time
+import os
+from os import environ
 
-consumer_key= '8kC67mAMcmyXNnpzgJWfIxcpI'
-consumer_secret= 'YORUpiS4JuBQmsIJEdTV0HtNshN7ISVjQjD565klc97eokMp6N'
-key= '1264192580293660681-Vhcsgp02uk3zhnAe2RmEUYR2NETDCZ'
-secret= 'ntAM0po6thSsWhEnrse4SgaD4YQVxI5GJAnukqm5uWOOn'
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(key,secret)
+CONSUMER_KEY = environ['CONSUMER_KEY']
+CONSUMER_SECRET = environ['CONSUMER_SECRET']
+ACCESS_KEY = environ['ACCESS_KEY']
+ACCESS_SECRET = environ['ACCESS_SECRET']
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
-
-i=api.me()
-
-followed = []
-friends = []
-liked = []
 
 term = ["Tripoli","Libya","قرامطة","حكومة الوفاق الوطني","أبطال مصراتة","الزاوية العنقاء"]
 query= random.choice(term)
@@ -36,11 +33,13 @@ for tweet in search:
         time.sleep(5)
         api.create_friendship(id=tweet.user.id)
         print('Made friendship with '+tweet.user.screen_name+' now')
+        time.sleep(3)
         print('---- user follow count')
         print(tweet.user.followers_count)
         time.sleep(3)
         api.create_mute(id=tweet.user.id)
         print(tweet.user.screen_name+' muted')
+        time.sleep(3)
         if (tweet.retweet_count < 5):
             continue
             try:
@@ -54,6 +53,6 @@ for tweet in search:
     except tweepy.TweepError as e:
         print(e.reason)
         continue
-       
+
 print('waiting for 210 minutes')
 time.sleep(210)
