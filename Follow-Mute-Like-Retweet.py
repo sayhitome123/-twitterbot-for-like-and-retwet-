@@ -54,6 +54,6 @@ for tweet in search:
     except tweepy.TweepError as e:
         print(e.reason)
         continue
-
-    print('waiting for 210 minutes')
-    time.sleep(210)
+       
+print('waiting for 210 minutes')
+time.sleep(210)
