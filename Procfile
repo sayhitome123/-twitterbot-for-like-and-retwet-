@@ -1,2 +1,2 @@
-Friendship: python Follow-Mute-Like-Retweet.py
-Likes: python TwitterBot.py
+friendship: python Follow-Mute-Like-Retweet.py
+likes: python TwitterBot.py
