@@ -50,6 +50,3 @@ def get_tweets(api,username):
             if not deadend:
                 page=1
                 time.sleep(20)
-
-
-get_tweets(api, 'nbenotman')
