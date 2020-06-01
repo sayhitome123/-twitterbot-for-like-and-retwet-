@@ -1,2 +1,2 @@
 worker: python TwitterBot.py
-worker: python Follow-Mute-Like-Retweet.py
+capture: python Follow-Mute-Like-Retweet.py
