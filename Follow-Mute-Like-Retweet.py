@@ -16,7 +16,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 count = 1
 while count <=5:
-    term = ["Tripoli","Libya","قرامطة","حكومة الوفاق الوطني","أبطال مصراتة","الزاوية العنقاء","LAAF GNA"]
+    term = ["Sirt","سرت","قرامطة","حكومة الوفاق الوطني","أبطال مصراتة","الزاوية العنقاء","LAAF GNA"]
     query= random.choice(term)
     search = tweepy.Cursor(api.search,q=query,result_type="recent",include_rts=False).items(1)
 
