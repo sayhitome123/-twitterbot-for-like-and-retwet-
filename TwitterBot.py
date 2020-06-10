@@ -66,6 +66,6 @@ while Looop <=5:
             time.sleep(2)
             break
 
-    print('Waiting for 50 Seconds')
+    print('Waiting for 110 Seconds')
     print('------------------------')
-    time.sleep(60)
+    time.sleep(110)
