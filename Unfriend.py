@@ -22,7 +22,7 @@ for user in muted_users:
         print(user.screen_name+ ' unfriend')
         api.destroy_mute(user.id)
         api.destroy_friendship(user.id)
-        time.sleep(2)
+        time.sleep(210)
     else:
         print('break')
         break
