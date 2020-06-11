@@ -14,15 +14,21 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-muted_users = api.mutes()
-friends_ids = api.friends_ids(api.me().id)
+looop=2
+while looop < 3:
+    muted_users = api.mutes()
+    friends_ids = api.friends_ids(api.me().id)
 
-for user in muted_users:
-    if user not in friends_ids:
-        print(user.screen_name+ ' unfriend')
-        api.destroy_mute(user.id)
-        api.destroy_friendship(user.id)
-        time.sleep(210)
-    else:
-        print('break')
-        break
+    for user in muted_users:
+        if user not in friends_ids:
+            try:
+                print(user.screen_name+ ' unfriend')
+                api.destroy_mute(user.id)
+                api.destroy_friendship(user.id)
+                time.sleep(60)
+            except tweepy.TweepError as e:
+                print(e.reason)
+                break
+        else:
+            print('continue')
+            break
