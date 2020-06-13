@@ -37,9 +37,9 @@ while Looop <=5:
                 time.sleep(2)
                 tweet.favorite()
                 print('Tweet Liked - ' + tweet.text)
-                time.sleep(1)
+                time.sleep(3)
                 print('Waiting for 07 Seconds')
-                time.sleep(7)
+                time.sleep(30)
 
 
             except tweepy.TweepError as e:
@@ -68,4 +68,4 @@ while Looop <=5:
 
     print('Waiting for 110 Seconds')
     print('------------------------')
-    time.sleep(110)
+    time.sleep(130)
