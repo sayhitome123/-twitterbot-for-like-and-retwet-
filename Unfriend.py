@@ -25,7 +25,7 @@ while looop < 3:
                 print(user.screen_name+ ' unfriend')
                 api.destroy_mute(user.id)
                 api.destroy_friendship(user.id)
-                time.sleep(60)
+                time.sleep(180)
             except tweepy.TweepError as e:
                 print(e.reason)
                 break
