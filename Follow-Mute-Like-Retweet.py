@@ -16,21 +16,21 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
 count = 1
 while count <=5:
-    term = ["Sirt","سرت","قرامطة","حكومة الوفاق الوطني","أبطال مصراتة","الزاوية العنقاء","LAAF GNA"]
+    term = ["طرابلس","طبرق","بنغازي","Tripoli GNU","مصراتة","ليبيا","حكومة الوحدة الوطنية"]
     query= random.choice(term)
     search = tweepy.Cursor(api.search,q=query,result_type="recent",include_rts=False).items(1)
 
     for tweet in search:
-        time.sleep(2)
+        time.sleep(10)
         print('searching....')
         if (tweet.user.followers_count < 100):
             continue
         try:
             print(tweet.text)
-            time.sleep(2)
+            time.sleep(10)
             print('Likes:')
             print(tweet.retweet_count)
-            time.sleep(3)
+            time.sleep(8)
             tweet.favorite()
             print('tweet liked')
 
@@ -38,20 +38,20 @@ while count <=5:
             print(e.reason)
 
         try:
-            time.sleep(5)
+            time.sleep(15)
             api.create_friendship(id=tweet.user.id)
             print('Made friendship with ' + tweet.user.screen_name + ' now')
-            time.sleep(3)
+            time.sleep(14)
             print('---- user follow count')
             print(tweet.user.followers_count)
-            time.sleep(3)
+            time.sleep(14)
             api.create_mute(id=tweet.user.id)
             print(tweet.user.screen_name + ' muted')
         except tweepy.TweepError as e:
             print(e.reason)
 
         try:
-            time.sleep(3)
+            time.sleep(15)
             if (tweet.retweet_count < 5):
                 continue
             try:
@@ -62,7 +62,7 @@ while count <=5:
         except tweepy.TweepError as e:
             print(e.reason)
 
-    print('Waiting for 210 Seconds')
-    time.sleep(210)
+    print('Waiting for 650 Seconds')
+    time.sleep(650)
 
 count = 1
