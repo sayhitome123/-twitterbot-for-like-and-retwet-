@@ -17,7 +17,7 @@ api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 user = api.me()
 print('Account name: ' + user.name)
 print('------------------------')
-time.sleep(2)
+time.sleep(6)
 Looop=2
 Now=datetime.datetime.now()
 while Looop <=5:
@@ -34,38 +34,38 @@ while Looop <=5:
             print('Date: ')
             print(tweet.created_at)
             try:
-                time.sleep(2)
+                time.sleep(6)
                 tweet.favorite()
                 print('Tweet Liked - ' + tweet.text)
-                time.sleep(3)
-                print('Waiting for 07 Seconds')
-                time.sleep(30)
+                time.sleep(9)
+                print('Waiting for 90 Seconds')
+                time.sleep(90)
 
 
             except tweepy.TweepError as e:
                 print(e.reason)
-                print('Waiting for 08 Seconds')
-                time.sleep(8)
+                print('Waiting for 24 Seconds')
+                time.sleep(24)
 
 
         if tweet.retweet_count > 5:
             try:
                 tweet.retweet()
                 print('Retweeted')
-                print('Waiting for 09 Seconds')
-                time.sleep(9)
+                print('Waiting for 27 Seconds')
+                time.sleep(27)
                 break
 
             except tweepy.TweepError as e:
                 print(e.reason)
-                print('Waiting for 10 Seconds')
-                time.sleep(10)
+                print('Waiting for 30 Seconds')
+                time.sleep(30)
                 break
         else:
             print('Retweets are less than 5')
-            time.sleep(2)
+            time.sleep(6)
             break
 
-    print('Waiting for 110 Seconds')
+    print('Waiting for 390 Seconds')
     print('------------------------')
-    time.sleep(130)
+    time.sleep(390)
